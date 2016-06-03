@@ -1,0 +1,5 @@
+%p#notice= notice
+
+%h1= @page.title
+%p= time_ago_in_words @page.created_at
+= simple_format @page.body

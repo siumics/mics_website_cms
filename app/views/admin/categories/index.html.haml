@@ -1,0 +1,21 @@
+%h1.center Categories
+.table-padding.table-responsive
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Name
+        %th
+        %th
+        %th
+
+    %tbody
+      - @categories.each do |category|
+        %tr
+          %td= category.name
+          %td= link_to 'Show', category, class: 'btn btn-primary'
+          %td= link_to 'Edit', edit_admin_category_path(category), class: 'btn btn-warning'
+          %td= link_to 'Destroy', admin_category_path(category), method: :delete, data: {confirm: 'Are you sure?' }, class: 'btn btn-danger'
+
+%br
+
+= link_to 'New Category', new_admin_category_path, class: 'btn btn-success btn-lg btn-block'

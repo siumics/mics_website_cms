@@ -1,0 +1,22 @@
+%h1.center Pages
+
+.table-padding.table-responsive
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Title
+        %th Body
+        %th Slug
+        %th
+
+    %tbody
+      - @pages.each do |page|
+        %tr
+          %td= link_to page.title, edit_admin_page_path(page), class: 'btn btn-link'
+          %td= page.body
+          %td= url_for_page page
+          %td= link_to 'Destroy', admin_page_path(page), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
+
+%br
+
+= link_to 'New Page', new_admin_page_path, class: 'btn btn-success btn-lg btn-block'
