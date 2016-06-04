@@ -13,7 +13,7 @@
       - @pages.each do |page|
         %tr
           %td= link_to page.title, edit_admin_page_path(page), class: 'btn btn-link'
-          %td= page.body
+          %td= page.body.html_safe
           %td= url_for_page page
           %td= link_to 'Destroy', admin_page_path(page), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
 

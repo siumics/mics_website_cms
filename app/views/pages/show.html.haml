@@ -2,4 +2,4 @@
 
 %h1= @page.title
 %p= time_ago_in_words @page.created_at
-= simple_format @page.body
+= simple_format @page.body.html_safe

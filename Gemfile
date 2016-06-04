@@ -21,17 +21,21 @@ gem 'faker'
 gem 'redcarpet'
 gem 'font-awesome-sass'
 
+#ckeditor gems
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'responders'
+
 group :development, :test do
   gem 'byebug'
   gem 'letter_opener'
   gem 'dotenv-rails'
 end
+
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'haml-rails'
-gem 'pry-rails'
-gem 'pry-byebug'
-#gem 'high_voltage'
 gem 'pundit'
 gem 'therubyracer', :platform=>:ruby
 group :development do
