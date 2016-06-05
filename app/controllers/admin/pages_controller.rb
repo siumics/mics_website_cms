@@ -34,8 +34,11 @@ module Admin
     end
 
     def destroy
-      @page.destroy
-      redirect_to admin_pages_url, notice: 'Page was successfully destroyed.'
+      if @page.destroy
+        redirect_to admin_pages_url, notice: 'Page was successfully destroyed.'
+      else
+        redirect_to admin_pages_url, alert: 'Page was not successfully destroyed'
+      end
     end
 
     private
