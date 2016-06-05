@@ -1,14 +1,10 @@
 %h1 Menus
 
-
-%table.table.table-responsive.table-hover
+%ul
   -@menus.each do |menu|
-    %tr
-      %td= menu.name
-      %td= link_to 'edit', edit_admin_menu_path(menu), class: 'btn btn-warning'
-    %tr
+    %h2= menu.name
+    %ul
       - menu.menu_items.each do |menu_item|
-        %td= menu_item.title
-        %td= menu_item.url
+        %li.h5=link_to menu_item.title, url_for_menu_item(menu_item)
 %p
   = link_to 'New', new_admin_menu_path, class: 'btn btn-success btn-lg btn-block'

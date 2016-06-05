@@ -9,6 +9,15 @@
   .field
     = f.label :title
     = f.text_field :title, class: "form-control"
+
+  %h3 Custom Fields
+  .field
+    = f.fields_for :fields do |fo|
+      %p
+        = fo.label :url_value, fo.object.field_definition.key
+        = fo.text_field :url_value, class: 'form-control'
+        = fo.hidden_field :field_definition_id
+
   .field
     = f.label :body
     = f.cktext_area :body
@@ -19,4 +28,5 @@
     = f.label :category_id
     = f.collection_select :category_id, Category.all, :id, :name, class: "form-control"
   .actions
+    =f.hidden_field :type_id
     = f.submit 'Save', class: 'btn btn-success'

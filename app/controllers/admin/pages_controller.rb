@@ -10,7 +10,10 @@ module Admin
     end
 
     def new
-      @page = Page.new
+      @page = Page.new(type: Type.where(name: params[:type]).first)
+      @page.type.field_definitions.each do |defin|
+        @page.fields.build(field_definition: defin)
+      end
     end
 
     def edit
@@ -19,6 +22,7 @@ module Admin
     def create
       @page = Page.new(page_params)
       if @page.save
+        Rails.application.reload_routes!
         redirect_to admin_page_path(@page), notice: 'Page was successfully created.'
       else
         render :new
@@ -27,6 +31,7 @@ module Admin
 
     def update
       if @page.update(page_params)
+        Rails.application.reload_routes!
         redirect_to admin_page_path(@page), notice: 'Page was successfully updated.'
       else
         render :edit
@@ -47,7 +52,7 @@ module Admin
       end
 
       def page_params
-        params.require(:page).permit(:title, :body, :slug, :category_id)
+        params.require(:page).permit(:title, :body, :slug, :category_id, :type_id, fields_attributes: [:id, :field_definition_id, :url_value])
       end
     end
 end

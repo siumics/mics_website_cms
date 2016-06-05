@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  
+
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   resources :pages, only: [:show]
   resources :categories, only: [:show]
   namespace :admin do
     resources :menus, exclude: [:show]
+    resources :types, exclude: [:show]
     resources :pages
     resources :categories
   end
