@@ -1,0 +1,12 @@
+%h1.center Types
+
+%ul
+  -@types.each do |type|
+    %h2
+      = type.name
+      =link_to 'edit', edit_admin_type_path(type), class: 'btn btn-warning'
+    %ul
+      - type.field_definitions.each do |field|
+        %li.h5= field.key
+%p
+  = link_to 'New', new_admin_type_path, class: 'btn btn-success btn-lg btn-block'

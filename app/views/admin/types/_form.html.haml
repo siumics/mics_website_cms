@@ -1,0 +1,14 @@
+= simple_form_for ["admin", @type] do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.text_field :name, placeholder: "Name", class: 'form-control input-lg'
+
+  %h3 Field Definitions
+  = f.fields_for :field_definitions do |form|
+    %p
+      =form.text_field :key, class: "form-control"
+      =form.hidden_field :id
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-warning'

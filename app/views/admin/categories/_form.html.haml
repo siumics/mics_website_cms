@@ -1,0 +1,8 @@
+= simple_form_for ["admin", @category] do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name, class: 'form-control'
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-warning'

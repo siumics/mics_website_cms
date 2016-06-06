@@ -1,0 +1,10 @@
+%p#notice= notice
+
+%h1= @page.title
+%em= time_ago_in_words @page.created_at
+
+%dl
+  - @page.fields.each do |f|
+    %dt= f.field_definition.key
+    %dd= f.value
+= simple_format @page.body.html_safe

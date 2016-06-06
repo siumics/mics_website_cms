@@ -1,0 +1,15 @@
+= simple_form_for ["admin", @menu] do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name, class: 'form-control'
+
+  %h3 Menu Items
+  = f.fields_for :menu_items do |form|
+    %p
+      =form.text_field :title
+      =form.text_field :url
+      =form.hidden_field :id
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-warning'

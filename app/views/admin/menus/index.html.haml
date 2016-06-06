@@ -1,0 +1,10 @@
+%h1 Menus
+
+%ul
+  -@menus.each do |menu|
+    %h2= menu.name
+    %ul
+      - menu.menu_items.each do |menu_item|
+        %li.h5=link_to menu_item.title, url_for_menu_item(menu_item)
+%p
+  = link_to 'New', new_admin_menu_path, class: 'btn btn-success btn-lg btn-block'
