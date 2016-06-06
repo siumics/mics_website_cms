@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605051955) do
+ActiveRecord::Schema.define(version: 20160605190831) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20160605051955) do
   create_table "fields", force: :cascade do |t|
     t.integer  "page_id"
     t.integer  "field_definition_id"
-    t.string   "url_value"
+    t.string   "value"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
@@ -81,6 +81,13 @@ ActiveRecord::Schema.define(version: 20160605051955) do
 
   add_index "pages", ["category_id"], name: "index_pages_on_category_id"
   add_index "pages", ["type_id"], name: "index_pages_on_type_id"
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "key"
+    t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "types", force: :cascade do |t|
     t.string   "name"

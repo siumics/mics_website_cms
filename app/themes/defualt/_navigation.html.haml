@@ -1,0 +1,9 @@
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+      = link_to "MICS CMS", root_path, class: 'navbar-brand'
+    #main-nav.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        - @menus.find {|menu| menu.name == "Main Nav"}.menu_items.each do |item|
+          %li
+            = link_to item.title, item.url

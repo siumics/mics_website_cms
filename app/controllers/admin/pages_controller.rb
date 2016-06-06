@@ -1,5 +1,5 @@
 module Admin
-  class PagesController < ApplicationController
+  class PagesController < AdminController
     before_action :set_page, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -11,8 +11,10 @@ module Admin
 
     def new
       @page = Page.new(type: Type.where(name: params[:type]).first)
-      @page.type.field_definitions.each do |defin|
-        @page.fields.build(field_definition: defin)
+      if !@page.type.nil?
+        @page.type.field_definitions.each do |defin|
+          @page.fields.build(field_definition: defin)
+        end
       end
     end
 
@@ -52,7 +54,7 @@ module Admin
       end
 
       def page_params
-        params.require(:page).permit(:title, :body, :slug, :category_id, :type_id, fields_attributes: [:id, :field_definition_id, :url_value])
+        params.require(:page).permit(:title, :body, :slug, :category_id, :type_id, fields_attributes: [:id, :field_definition_id, :value])
       end
     end
 end

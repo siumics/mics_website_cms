@@ -3,9 +3,9 @@
 one:
   page_id: 
   field_definition_id: 
-  url_value: MyString
+  value: MyString
 
 two:
   page_id: 
   field_definition_id: 
-  url_value: MyString
+  value: MyString
