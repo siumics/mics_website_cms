@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :types, exclude: [:show]
     resources :pages
     resources :categories
+    resources :users
     get "settings" => "settings#index"
     put "settings" => "settings#update"
   end

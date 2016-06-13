@@ -1,0 +1,29 @@
+= form_for ["admin", @user] do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :first_name
+    = f.text_field :first_name,  placeholder: "#{@user.first_name}", class: 'form-control'
+  .field
+    = f.label :last_name
+    = f.text_field :last_name, placeholder: "#{@user.last_name}", class: 'form-control'
+  .field
+    = f.label :email
+    = f.text_field :email, placeholder: "#{@user.email}", class: 'form-control'
+  .field
+    = f.label :dawgtag
+    = f.text_field :dawgtag, placeholder: "#{@user.dawgtag}", class: 'form-control'
+  .field
+    = f.label :password
+    = f.password_field :password, class: 'form-control'
+  .field
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation, class: 'form-control'
+
+  .actions
+    = f.submit 'Save'
