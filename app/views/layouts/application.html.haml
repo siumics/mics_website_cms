@@ -8,8 +8,13 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %header
+    #mySidenav.sidenav
+      %a.closebtn{onclick: "closeNav()"} &#215;
       = render 'layouts/navigation'
-    %main{:role => "main"}
+    #main{role: "main"}
       = render 'layouts/messages'
+      - if user_signed_in?
+        %span{onclick: "openNav()", style: "font-size:30px;cursor:pointer"} ☰ CMS Tabs
+        %h2.center.neon-blue
+          Signed in as #{current_user.full_name}
       = yield
