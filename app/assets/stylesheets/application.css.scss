@@ -56,12 +56,45 @@
 #main {
     transition: margin-left .5s;
     padding: 20px;
-    color: white;
 }
+
 body {
   background: #454545;
 }
 
+.form-container {
+  background: #0f0800;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#0f0800));
+  background: -webkit-linear-gradient(top, #000000, #0f0800);
+  background: -moz-linear-gradient(top, #000000, #0f0800);
+  background: -ms-linear-gradient(top, #000000, #0f0800);
+  background: -o-linear-gradient(top, #000000, #0f0800);
+  background-image: -ms-linear-gradient(top, #000000 0%, #0f0800 100%);
+  -webkit-border-radius: 30px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-box-shadow: 3px 3px 22px 7px rgba(154,67,178,1), inset rgba(255,255,255,0.4) 0 0px 0;
+  -moz-box-shadow: rgba(000,000,000,0.9) 0 1px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+  box-shadow:  3px 3px 22px 7px rgba(154,67,178,1), inset rgba(255,255,255,0.4) 0 0px 0;
+  font-family: 'Helvetica Neue',Helvetica,sans-serif;
+  box-sizing: content-box;
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  vertical-align: middle;
+  max-width:500px;
+  padding:20px;
+  width: auto;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+h1,label,span,table{
+  color: white;
+  padding: 5px;
+}
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}

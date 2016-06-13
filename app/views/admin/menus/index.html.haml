@@ -3,6 +3,7 @@
 %ul
   -@menus.each do |menu|
     %h2= menu.name
+    = link_to 'edit', edit_admin_menu_path(menu), class: 'btn btn-warning'
     %ul
       - menu.menu_items.each do |menu_item|
         %li.h5=link_to menu_item.title, url_for_menu_item(menu_item)
