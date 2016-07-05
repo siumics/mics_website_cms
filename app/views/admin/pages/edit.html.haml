@@ -1,7 +1,6 @@
-.form-container
-  %h1 Editing page
+%h1 Editing page
 
-  = render 'form'
+= render 'form'
 
-  = link_to 'Show', admin_page_path(@page), class: 'btn btn-success'
-  = link_to 'Back', admin_pages_path, class: 'btn btn-danger'
+= link_to 'Show', admin_page_path(@page), class: 'btn btn-success'
+= link_to 'Back', admin_pages_path, class: 'btn btn-danger'
