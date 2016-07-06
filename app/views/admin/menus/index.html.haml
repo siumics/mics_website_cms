@@ -6,7 +6,8 @@
   %tbody
     %tr
       - @menus.each do |menu|
-        %td.h3.center{id: '#show'}
+        %td.h3.center{class: 'parentRow', onclick: "toggleRow(this)"}
+          %i.fa.fa-plus-circle
           = menu.name
           = link_to 'edit', edit_admin_menu_path(menu), class: 'btn btn-warning'
         - menu.menu_items.each do |menu_item|

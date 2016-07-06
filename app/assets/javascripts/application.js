@@ -15,5 +15,4 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require ckeditor/init
-//= require mics_cms
 //= require_tree .
