@@ -12,8 +12,8 @@
       %a.closebtn{onclick: "closeNav()"} &#215;
       = render 'layouts/navigation'
     #main{role: "main"}
-      = render 'layouts/messages'
       - if user_signed_in?
+        = render 'layouts/messages'
         %span{onclick: "openNav()", style: "font-size:30px;cursor:pointer", class: "fa fa-bars"} CMS Tabs
         %h2.center.neon-blue
           Signed in as #{current_user.full_name}
