@@ -1,9 +1,19 @@
-%nav.navbar.navbar-inverse.navbar-fixed-top
-  .container
-    .navbar-header
-      = link_to "MICS CMS", root_path, class: 'navbar-brand'
-    #main-nav.collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        - @menus.find {|menu| menu.name == "Main Nav"}.menu_items.each do |item|
-          %li
-            = link_to item.title, item.url
+!!!
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : 'Mcs Cms'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Mcs Cms'}"}
+    = stylesheet_link_tag 'theme-defualt', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %nav.navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          = link_to "MICS CMS", root_path, class: 'navbar-brand'
+        #main-nav.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            - @menus.find {|menu| menu.name == "Main Nav"}.menu_items.each do |item|
+              %li
+                = link_to item.title, item.url

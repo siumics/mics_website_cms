@@ -1,10 +1,17 @@
-%h1 Menus
+%h1.center Menus
 
-%ul
-  -@menus.each do |menu|
-    %h2= menu.name
-    %ul
-      - menu.menu_items.each do |menu_item|
-        %li.h5=link_to menu_item.title, url_for_menu_item(menu_item)
+%table.table.table-hover.table-responsive
+  %thead
+    %th
+  %tbody
+    %tr
+      - @menus.each do |menu|
+        %td.h3.center{class: 'parentRow', onclick: "toggleRow(this)"}
+          %i.fa.fa-plus-circle
+          = menu.name
+          = link_to 'edit', edit_admin_menu_path(menu), class: 'btn btn-warning'
+        - menu.menu_items.each do |menu_item|
+          %tr{style: "display: none"}
+            %td.h4.center= link_to menu_item.title, url_for_menu_item(menu_item)
 %p
   = link_to 'New', new_admin_menu_path, class: 'btn btn-success btn-lg btn-block'

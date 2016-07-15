@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  authenticated :user do
+    root to: "admin/pages#index", as: "admin"
+  end
   root to: redirect(Setting.where(key: "homepage").first.value)
 
   mount Ckeditor::Engine => '/ckeditor'

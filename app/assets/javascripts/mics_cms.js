@@ -1,16 +1,3 @@
-/*
-openNav = ->
-  $(document).getElementById('main').style.marginLeft = '250px'
-  $(document).getElementById('mySidenav').style.width = '250px'
-  $(document).body.style.backgroundColor = 'rgba(0,0,0,0.4)'
-  return
-
-closeNav = ->
-  $(document).getElementById('mySidenav').style.width = '0'
-  $(document).getElementById('main').style.marginLeft = '0'
-  return
-*/
-
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
@@ -20,4 +7,10 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "#454545";
+}
+
+function toggleRow(e){
+    var subRow = e.parentNode.parentNode.nextElementSibling;
+    subRow.style.display = subRow.style.display === 'none' ? 'table-row' : 'none';
 }

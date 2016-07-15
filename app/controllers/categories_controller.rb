@@ -1,6 +1,6 @@
 class CategoriesController < ContentController
   def show
-    @category = Category.includes(:categorys).find(params[:id])
+    @category = Category.find(params[:id])
     render template: template_to_render
   end
 

@@ -14,8 +14,8 @@
   .field
     = f.fields_for :fields do |fo|
       %p
-        = fo.label :url_value, fo.object.field_definition.key
-        = fo.text_field :url_value, class: 'form-control'
+        = fo.label :value, fo.object.field_definition.key
+        = fo.text_field :value, class: 'form-control'
         = fo.hidden_field :field_definition_id
 
   .field

@@ -11,5 +11,4 @@ class User < ActiveRecord::Base
     first_name.capitalize!
     last_name.capitalize!
   end
-
 end
