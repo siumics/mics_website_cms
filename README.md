@@ -1,12 +1,12 @@
 # MICS Website CMS
-###World View
+### World View
 ![Alt Text](https://github.com/phantomfreeJr/mics_website_cms/blob/master/git_pics/reg_page.png)
 
-###Login View
+### Login View
 ![Alt Text](https://github.com/phantomfreeJr/mics_website_cms/blob/master/git_pics/login.png)
 
-###Admin View
+### Admin View
 ![Alt Text](https://github.com/phantomfreeJr/mics_website_cms/blob/master/git_pics/create_pages.png)
 
-###Different Tabs
+### Different Tabs
 ![Alt Text](https://github.com/phantomfreeJr/mics_website_cms/blob/master/git_pics/cms_tabs.png)
